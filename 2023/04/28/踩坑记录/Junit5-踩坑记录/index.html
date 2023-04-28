@@ -17,29 +17,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>String 字符串 | klay的知识星球</title>
-  <meta name="description" content="String 字符串概述 String 是 Java 定义好的一个类。定义在java.lang包中，所以使用的时候不需要导包。 Java 程序中的所有字符串文字（例如“abcdefg”）。都被实例为此类的对象。 字符串不可变，它们的值在创建后不能被更改  创建 String 对象的两种方式 通过直接赋值的方式 通过 new 关键字进行创建（可传递字符串【”abc”】、字符数组【char []】、和">
+  <title>Junit 踩坑记录 | klay的知识星球</title>
+  <meta name="description" content="Junit 踩坑记录java.lang.ClassNotFoundException 踩坑记录我在运行单元测试时，出现了错误，完整的错误信息如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455Internal Error occurred.o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="String 字符串">
-<meta property="og:url" content="http://example.com/2023/01/15/java%E5%9F%BA%E7%A1%80/String-%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+<meta property="og:title" content="Junit 踩坑记录">
+<meta property="og:url" content="http://example.com/2023/04/28/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="努力沉淀">
-<meta property="og:description" content="String 字符串概述 String 是 Java 定义好的一个类。定义在java.lang包中，所以使用的时候不需要导包。 Java 程序中的所有字符串文字（例如“abcdefg”）。都被实例为此类的对象。 字符串不可变，它们的值在创建后不能被更改  创建 String 对象的两种方式 通过直接赋值的方式 通过 new 关键字进行创建（可传递字符串【”abc”】、字符数组【char []】、和">
+<meta property="og:description" content="Junit 踩坑记录java.lang.ClassNotFoundException 踩坑记录我在运行单元测试时，出现了错误，完整的错误信息如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455Internal Error occurred.o">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919164203937.png">
-<meta property="og:image" content="http://example.com/image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919165005550.png">
-<meta property="og:image" content="http://example.com/image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919165008792.png">
-<meta property="og:image" content="http://example.com/image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919165118170.png">
-<meta property="og:image" content="http://example.com/image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets%5Cimage-20220919175308137.png">
-<meta property="og:image" content="http://example.com/image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919175336823.png">
-<meta property="og:image" content="http://example.com/image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919175325119.png">
-<meta property="article:published_time" content="2023-01-15T12:40:18.285Z">
-<meta property="article:modified_time" content="2023-01-15T13:01:53.785Z">
+<meta property="og:image" content="http://example.com/image/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95.assets/image-20230428172227183.png">
+<meta property="og:image" content="http://example.com/image/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95.assets/image-20230428172512993.png">
+<meta property="og:image" content="http://example.com/image/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95.assets/image-20230428173300438.png">
+<meta property="article:published_time" content="2023-04-28T09:10:22.913Z">
+<meta property="article:modified_time" content="2023-04-28T09:52:49.761Z">
 <meta property="article:author" content="klay">
-<meta property="article:tag" content="Java基础">
+<meta property="article:tag" content="Junit">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919164203937.png">
+<meta name="twitter:image" content="http://example.com/image/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95.assets/image-20230428172227183.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2023/01/15/java%E5%9F%BA%E7%A1%80/String-%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+  <link rel="canonical" href="http://example.com/2023/04/28/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/index.html">
   
     <link rel="alternate" href="/atom.xml" title="努力沉淀" type="application/atom+xml">
   
@@ -300,21 +296,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#String-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.</span> <span class="toc-text">String 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-String-%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">创建 String 对象的两种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-%E5%9C%A8-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">String 在 Java虚拟机中的内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E8%B5%8B%E5%80%BC%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.1.</span> <span class="toc-text">直接赋值的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new-%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">new 的方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">字符串拼接的底层原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.5.</span> <span class="toc-text">小结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.1.</span> <span class="toc-text">字符串的内存原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B7%E6%AF%94%E8%BE%83%E7%9A%84%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.5.2.</span> <span class="toc-text">&#x3D;&#x3D; 号比较的到底是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86-1"><span class="toc-number">1.5.3.</span> <span class="toc-text">字符串拼接的底层原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StringBuilder%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.5.4.</span> <span class="toc-text">StringBuilder提高效率原理图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StringBuilder%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-number">1.5.5.</span> <span class="toc-text">StringBuilder源码分析</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Junit-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">Junit 踩坑记录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#java-lang-ClassNotFoundException-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">java.lang.ClassNotFoundException 踩坑记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-java基础/String-字符串" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-踩坑记录/Junit5-踩坑记录" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      String 字符串
+      Junit 踩坑记录
     </h1>
   
 
@@ -322,20 +318,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2023/01/15/java%E5%9F%BA%E7%A1%80/String-%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="article-date">
-	  <time datetime="2023-01-15T12:40:18.285Z" itemprop="datePublished">2023-01-15</time>
+	<a href="/2023/04/28/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="article-date">
+	  <time datetime="2023-04-28T09:10:22.913Z" itemprop="datePublished">2023-04-28</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+    <a class="article-category-link" href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">踩坑记录</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag">Java基础</a>
+	<a class="article-tag-link-link" href="/tags/Junit/" rel="tag">Junit</a>
   </span>
 
 
@@ -348,51 +344,27 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/01/15/java%E5%9F%BA%E7%A1%80/String-%E5%AD%97%E7%AC%A6%E4%B8%B2/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/04/28/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="String-字符串"><a href="#String-字符串" class="headerlink" title="String 字符串"></a>String 字符串</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
-<li>String 是 Java 定义好的一个类。定义在java.lang包中，所以使用的时候不需要导包。</li>
-<li>Java 程序中的所有字符串文字（例如“abcdefg”）。都被实例为此类的对象。</li>
-<li>字符串不可变，它们的值在创建后不能被更改</li>
-</ol>
-<h2 id="创建-String-对象的两种方式"><a href="#创建-String-对象的两种方式" class="headerlink" title="创建 String 对象的两种方式"></a>创建 String 对象的两种方式</h2><ol>
-<li>通过直接赋值的方式</li>
-<li>通过 new 关键字进行创建（可传递字符串【”abc”】、字符数组【char []】、和字节数组【byte[]】）</li>
-</ol>
-<p><img src="/../../image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919164203937.png" alt="image-20220919164203937">    </p>
-<h2 id="String-在-Java虚拟机中的内存模型"><a href="#String-在-Java虚拟机中的内存模型" class="headerlink" title="String 在 Java虚拟机中的内存模型"></a>String 在 Java虚拟机中的内存模型</h2><h3 id="直接赋值的方式"><a href="#直接赋值的方式" class="headerlink" title="直接赋值的方式"></a>直接赋值的方式</h3><p>当使用双引号直接赋值时，系统会检查该字符串在串池中是否存在。</p>
-<p><strong>不存在：创建新的</strong></p>
-<p><strong>存在：复用</strong></p>
-<p><img src="/../../image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919165005550.png" alt="image-20220919165005550">    <img src="/../../image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919165008792.png" alt="image-20220919165008792">    </p>
-<h3 id="new-的方式"><a href="#new-的方式" class="headerlink" title="new 的方式"></a>new 的方式</h3><p>每次new 一个字符串，都会在堆内存中开辟一个新的空间</p>
-<p><img src="/../../image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919165118170.png" alt="image-20220919165118170">    </p>
-<h2 id="字符串拼接的底层原理"><a href="#字符串拼接的底层原理" class="headerlink" title="字符串拼接的底层原理"></a>字符串拼接的底层原理</h2><p><img src="/../../image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets%5Cimage-20220919175308137.png" alt="image-20220919175308137">    </p>
-<p><img src="/../../image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919175336823.png" alt="image-20220919175336823">    </p>
-<p><img src="/../../image/String-%E5%AD%97%E7%AC%A6%E4%B8%B2.assets/image-20220919175325119.png" alt="image-20220919175325119">    </p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><h3 id="字符串的内存原理"><a href="#字符串的内存原理" class="headerlink" title="字符串的内存原理"></a>字符串的内存原理</h3><ul>
-<li>直接赋值会复用字符串常量池中的</li>
-<li>new 出来不会复用，而是开辟一个新的空间</li>
-</ul>
-<h3 id="号比较的到底是什么？"><a href="#号比较的到底是什么？" class="headerlink" title="== 号比较的到底是什么？"></a>== 号比较的到底是什么？</h3><ul>
-<li>基本类型比较数据值</li>
-<li>引用类型比较地址值</li>
-</ul>
-<h3 id="字符串拼接的底层原理-1"><a href="#字符串拼接的底层原理-1" class="headerlink" title="字符串拼接的底层原理"></a>字符串拼接的底层原理</h3><ul>
-<li>如果没有变量参数，都是字符串直接相加，编译之后就算拼接之后的结果，会复用串池中的字符串。</li>
-<li>如果有变量参与，会创建新的字符串，浪费内存</li>
-</ul>
-<h3 id="StringBuilder提高效率原理图"><a href="#StringBuilder提高效率原理图" class="headerlink" title="StringBuilder提高效率原理图"></a>StringBuilder提高效率原理图</h3><ul>
-<li>所有要拼接的内容都会往StringBuilder中放，不会创建很多无用的空间，节约内存</li>
-</ul>
-<h3 id="StringBuilder源码分析"><a href="#StringBuilder源码分析" class="headerlink" title="StringBuilder源码分析"></a>StringBuilder源码分析</h3><ul>
-<li>默认创建一个长度为16的字符数组【char[16]】</li>
-<li>添加的内容小于16，直接存</li>
-<li>添加的内容大于16，会扩容（原来的容量 * 2 + 2）</li>
-<li>如果扩容后还不够，以实际长度为准</li>
+        <h1 id="Junit-踩坑记录"><a href="#Junit-踩坑记录" class="headerlink" title="Junit 踩坑记录"></a>Junit 踩坑记录</h1><h2 id="java-lang-ClassNotFoundException-踩坑记录"><a href="#java-lang-ClassNotFoundException-踩坑记录" class="headerlink" title="java.lang.ClassNotFoundException 踩坑记录"></a>java.lang.ClassNotFoundException 踩坑记录</h2><p>我在运行单元测试时，出现了错误，完整的错误信息如下：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">Internal Error occurred.</span><br><span class="line">org.junit.platform.commons.JUnitException: TestEngine with ID &#x27;junit-jupiter&#x27; failed to discover tests</span><br><span class="line">	at org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.discoverEngineRoot(EngineDiscoveryOrchestrator.java:160)</span><br><span class="line">	at org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.discoverSafely(EngineDiscoveryOrchestrator.java:134)</span><br><span class="line">	at org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.discover(EngineDiscoveryOrchestrator.java:108)</span><br><span class="line">	at org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.discover(EngineDiscoveryOrchestrator.java:80)</span><br><span class="line">	at org.junit.platform.launcher.core.DefaultLauncher.discover(DefaultLauncher.java:110)</span><br><span class="line">	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)</span><br><span class="line">	at org.junit.platform.launcher.core.DefaultLauncherSession<span class="built_in">$</span>DelegatingLauncher.execute(DefaultLauncherSession.java:86)</span><br><span class="line">	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)</span><br><span class="line">	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)</span><br><span class="line">	at com.intellij.rt.junit.IdeaTestRunner<span class="built_in">$</span>Repeater<span class="built_in">$</span>1.execute(IdeaTestRunner.java:38)</span><br><span class="line">	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)</span><br><span class="line">	at com.intellij.rt.junit.IdeaTestRunner<span class="built_in">$</span>Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)</span><br><span class="line">	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)</span><br><span class="line">	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)</span><br><span class="line">Caused by: org.junit.platform.commons.JUnitException: ClassSelector [className = &#x27;online.haien.guard.adapter.properties.PropertiesTest&#x27;] resolution failed</span><br><span class="line">	at org.junit.platform.launcher.listeners.discovery.AbortOnFailureLauncherDiscoveryListener.selectorProcessed(AbortOnFailureLauncherDiscoveryListener.java:39)</span><br><span class="line">	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.resolveCompletely(EngineDiscoveryRequestResolution.java:102)</span><br><span class="line">	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.run(EngineDiscoveryRequestResolution.java:82)</span><br><span class="line">	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolver.resolve(EngineDiscoveryRequestResolver.java:113)</span><br><span class="line">	at org.junit.jupiter.engine.discovery.DiscoverySelectorResolver.resolveSelectors(DiscoverySelectorResolver.java:46)</span><br><span class="line">	at org.junit.jupiter.engine.JupiterTestEngine.discover(JupiterTestEngine.java:69)</span><br><span class="line">	at org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.discoverEngineRoot(EngineDiscoveryOrchestrator.java:152)</span><br><span class="line">	... 13 more</span><br><span class="line">Caused by: org.junit.platform.commons.PreconditionViolationException: Could not load class with name: online.haien.guard.adapter.properties.PropertiesTest</span><br><span class="line">	at org.junit.platform.engine.discovery.ClassSelector.lambda<span class="built_in">$</span>getJavaClass<span class="built_in">$</span>0(ClassSelector.java:75)</span><br><span class="line">	at org.junit.platform.commons.function.Try<span class="built_in">$</span>Failure.getOrThrow(Try.java:335)</span><br><span class="line">	at org.junit.platform.engine.discovery.ClassSelector.getJavaClass(ClassSelector.java:74)</span><br><span class="line">	at org.junit.jupiter.engine.discovery.ClassSelectorResolver.resolve(ClassSelectorResolver.java:66)</span><br><span class="line">	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.lambda<span class="built_in">$</span>resolve<span class="built_in">$</span>2(EngineDiscoveryRequestResolution.java:134)</span><br><span class="line">	at java.base/java.util.stream.ReferencePipeline<span class="built_in">$</span>3<span class="built_in">$</span>1.accept(ReferencePipeline.java:195)</span><br><span class="line">	at java.base/java.util.ArrayList<span class="built_in">$</span>ArrayListSpliterator.tryAdvance(ArrayList.java:1631)</span><br><span class="line">	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)</span><br><span class="line">	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)</span><br><span class="line">	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)</span><br><span class="line">	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)</span><br><span class="line">	at java.base/java.util.stream.FindOps<span class="built_in">$</span>FindOp.evaluateSequential(FindOps.java:150)</span><br><span class="line">	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)</span><br><span class="line">	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)</span><br><span class="line">	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.resolve(EngineDiscoveryRequestResolution.java:185)</span><br><span class="line">	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.resolve(EngineDiscoveryRequestResolution.java:125)</span><br><span class="line">	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.resolveCompletely(EngineDiscoveryRequestResolution.java:91)</span><br><span class="line">	... 18 more</span><br><span class="line">Caused by: java.lang.ClassNotFoundException: online.haien.guard.adapter.properties.PropertiesTest</span><br><span class="line">	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)</span><br><span class="line">	at java.base/jdk.internal.loader.ClassLoaders<span class="built_in">$</span>AppClassLoader.loadClass(ClassLoaders.java:178)</span><br><span class="line">	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)</span><br><span class="line">	at org.junit.platform.commons.util.ReflectionUtils.lambda<span class="built_in">$</span>tryToLoadClass<span class="built_in">$</span>9(ReflectionUtils.java:829)</span><br><span class="line">	at org.junit.platform.commons.function.Try.lambda<span class="built_in">$</span>call<span class="built_in">$</span>0(Try.java:57)</span><br><span class="line">	at org.junit.platform.commons.function.Try.of(Try.java:93)</span><br><span class="line">	at org.junit.platform.commons.function.Try.call(Try.java:57)</span><br><span class="line">	at org.junit.platform.commons.util.ReflectionUtils.tryToLoadClass(ReflectionUtils.java:792)</span><br><span class="line">	at org.junit.platform.commons.util.ReflectionUtils.tryToLoadClass(ReflectionUtils.java:748)</span><br><span class="line">	... 33 more</span><br></pre></td></tr></table></figure>
+
+<p>我查阅了国内外各种博客，大多数解决方案是 maven 依赖的问题，或者是 test 文件目录问题。我的问题是后者。</p>
+<p>报出异常时的 test 文件目录如下：</p>
+<p><img src="/../../image/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95.assets/image-20230428172227183.png" alt="image-20230428172227183">    </p>
+<p>由于目录不对，导致我执行 <code>mvn clean test-compile</code> <strong>没有在 target 中生成 test-classes 文件夹</strong>，所以运行时报出了错误：<strong>java.lang.ClassNotFoundException</strong></p>
+<p><img src="/../../image/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95.assets/image-20230428172512993.png" alt="image-20230428172512993">    </p>
+<p>重新修改后 test 文件目录如下，重新执行 <code>mvn clean test-compile</code> 也成功<strong>在 target 中生成出了 test-classes 文件夹</strong></p>
+<p><img src="/../../image/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95.assets/image-20230428173300438.png" alt="image-20230428173300438">    </p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>文件目录不对，test 文件目录少了 java 目录。</li>
+<li>test source root 给的不对，我把 test source root 给了 test 文件。</li>
+<li>测试代码要和业务代码的目录一致，并且 test source root 应给 java 目录。</li>
+<li>这次踩坑也浪费了不少时间，应细心找到问题根源，避免以后再犯同样的错误。</li>
 </ul>
 
       
@@ -403,7 +375,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2023/01/15/java%E5%9F%BA%E7%A1%80/String-%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="String 字符串" target="_blank" rel="external">http://example.com/2023/01/15/java基础/String-字符串/</a>
+      <a href="http://example.com/2023/04/28/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/Junit5-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" title="Junit 踩坑记录" target="_blank" rel="external">http://example.com/2023/04/28/踩坑记录/Junit5-踩坑记录/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -430,13 +402,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2023/01/15/java%E5%9F%BA%E7%A1%80/Java%E9%9B%86%E5%90%88%E4%B8%93%E5%8C%BA-%E9%9F%A9%E9%A1%BA%E5%B9%B3/" title="Java集合专区"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2023/01/15/java%E5%9F%BA%E7%A1%80/java%E5%9F%BA%E7%A1%80/" title="Java基础"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2023/02/18/java%E5%9F%BA%E7%A1%80/Java%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" title="Java 函数式编程"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
