@@ -17,25 +17,16 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Java 实现 PDF 生成 | klay的知识星球</title>
-  <meta name="description" content="Java 实现 PDF 生成技术选型我选用的框架是 Easy POI + docx4j。除此之外还有其他比较热门的框架，主要有 iText 和 Apache PDFBox。 为什么不选用 iText 或 Apache PDFBox？iText不选用的原因：  iText 5 以后需要购买商业许可，目前 iText 已经更新到 iText 8。  官网：https:&#x2F;&#x2F;itextpdf.com&#x2F; A">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java 实现 PDF 生成">
-<meta property="og:url" content="http://example.com/2023/06/19/PDF/Java%20%E5%AE%9E%E7%8E%B0%20PDF%20%E7%94%9F%E6%88%90/index.html">
+  <title>分类: openGauss | klay的知识星球</title>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="努力沉淀">
+<meta property="og:url" content="http://example.com/categories/openGauss/index.html">
 <meta property="og:site_name" content="努力沉淀">
-<meta property="og:description" content="Java 实现 PDF 生成技术选型我选用的框架是 Easy POI + docx4j。除此之外还有其他比较热门的框架，主要有 iText 和 Apache PDFBox。 为什么不选用 iText 或 Apache PDFBox？iText不选用的原因：  iText 5 以后需要购买商业许可，目前 iText 已经更新到 iText 8。  官网：https:&#x2F;&#x2F;itextpdf.com&#x2F; A">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/image/PDF%E7%94%9F%E6%88%90%E7%A0%94%E7%A9%B6.assets/PDF%E7%94%9F%E6%88%90%E7%AE%80%E5%8D%95%E6%B5%81%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/image/PDF%E7%94%9F%E6%88%90%E7%A0%94%E7%A9%B6.assets/image-20230619094602051.png">
-<meta property="og:image" content="http://example.com/image/PDF%E7%94%9F%E6%88%90%E7%A0%94%E7%A9%B6.assets/image-20230619094636423.png">
-<meta property="article:published_time" content="2023-06-19T02:04:06.448Z">
-<meta property="article:modified_time" content="2023-06-19T06:05:15.980Z">
 <meta property="article:author" content="klay">
-<meta property="article:tag" content="PDF">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/image/PDF%E7%94%9F%E6%88%90%E7%A0%94%E7%A9%B6.assets/PDF%E7%94%9F%E6%88%90%E7%AE%80%E5%8D%95%E6%B5%81%E7%A8%8B.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2023/06/19/PDF/Java%20%E5%AE%9E%E7%8E%B0%20PDF%20%E7%94%9F%E6%88%90/index.html">
+  <link rel="canonical" href="http://example.com/categories/openGauss/index.html">
   
     <link rel="alternate" href="/atom.xml" title="努力沉淀" type="application/atom+xml">
   
@@ -291,173 +282,85 @@
 </aside>
 
   
-  
-  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    <nav id="toc" class="article-toc">
-      <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-%E5%AE%9E%E7%8E%B0-PDF-%E7%94%9F%E6%88%90"><span class="toc-number">1.</span> <span class="toc-text">Java 实现 PDF 生成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">技术选型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E9%80%89%E7%94%A8-iText-%E6%88%96-Apache-PDFBox%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">为什么不选用 iText 或 Apache PDFBox？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iText"><span class="toc-number">1.2.1.</span> <span class="toc-text">iText</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apache-PDFBox"><span class="toc-number">1.2.2.</span> <span class="toc-text">Apache PDFBox</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Easy-POI-docx4j"><span class="toc-number">1.2.3.</span> <span class="toc-text">Easy POI + docx4j</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Easy-POI"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">Easy POI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#docx4j"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">docx4j</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PDF%E7%94%9F%E6%88%90%E6%B5%81%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text">PDF生成流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.4.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%87%E5%88%B0%E8%BF%87%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">遇到过的问题</span></a></li></ol></li></ol>
-    </nav>
-  </div>
-</aside>
-
-<main class="main" role="main">
-  <div class="content">
-  <article id="post-PDF/Java 实现 PDF 生成" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-    
-    <div class="article-header">
-      
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Java 实现 PDF 生成
-    </h1>
-  
-
-      
-      <div class="article-meta">
-        <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2023/06/19/PDF/Java%20%E5%AE%9E%E7%8E%B0%20PDF%20%E7%94%9F%E6%88%90/" class="article-date">
-	  <time datetime="2023-06-19T02:04:06.448Z" itemprop="datePublished">2023-06-19</time>
-	</a>
-</span>
-        
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/PDF/">PDF</a>
-  </span>
-
-        
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/PDF/" rel="tag">PDF</a>
-  </span>
-
-
-        
-	<span class="article-read hidden-xs">
-	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
-	    <span id="busuanzi_container_page_pv">
-			<span id="busuanzi_value_page_pv">0</span>
-		</span>
-	</span>
-
-
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/06/19/PDF/Java%20%E5%AE%9E%E7%8E%B0%20PDF%20%E7%94%9F%E6%88%90/#comments" class="article-comment-link">评论</a></span>
-        
-      </div>
+  <main class="main" role="main">
+  <article class="content article article-categories article-type-list" itemscope="">
+    <header class="article-header">
+      <h1 itemprop="name" class="hidden-xs">分类: openGauss</h1>
+      <p class="hidden-xs">共 2 篇文章</p>
+      <nav role="navigation" id="nav-main" class="okayNav">
+        <ul>
+          <li><a href="/categories">All</a></li>
+          
+          <li><a href="/categories/HTML/">HTML</a></li>
+          
+          <li><a href="/categories/Linux/">Linux</a></li>
+          
+          <li><a href="/categories/Hexo/">Hexo</a></li>
+          
+          <li><a href="/categories/PDF/">PDF</a></li>
+          
+          <li><a href="/categories/openGauss/">openGauss</a></li>
+          
+          <li><a href="/categories/MySQL/">MySQL</a></li>
+          
+          <li><a href="/categories/Java基础/">Java基础</a></li>
+          
+          <li><a href="/categories/Java基础/函数式编程/">函数式编程</a></li>
+          
+          <li><a href="/categories/redis/">redis</a></li>
+          
+          <li><a href="/categories/踩坑记录/">踩坑记录</a></li>
+          
+          <li><a href="/categories/计算机基础/">计算机基础</a></li>
+          
+          <li><a href="/categories/Java基础/设计模式/">设计模式</a></li>
+          
+          <li><a href="/categories/微信小程序/">微信小程序</a></li>
+          
+          <li><a href="/categories/计算机基础/计算机网络/">计算机网络</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <!-- /header -->
+    <div class="article-body">
+      <div class="panel panel-default b-no">
+    <div class="panel-heading" role="tab">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapseopenGauss" aria-expanded="true">
+              <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>
+              openGauss
+            </a>
+            <small class="text-muted">(Total 2 articles)</small>
+        </h4>
     </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
-      
-        <h1 id="Java-实现-PDF-生成"><a href="#Java-实现-PDF-生成" class="headerlink" title="Java 实现 PDF 生成"></a>Java 实现 PDF 生成</h1><h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p>我选用的框架是 Easy POI + docx4j。除此之外还有其他比较热门的框架，主要有 iText 和 Apache PDFBox。</p>
-<h2 id="为什么不选用-iText-或-Apache-PDFBox？"><a href="#为什么不选用-iText-或-Apache-PDFBox？" class="headerlink" title="为什么不选用 iText 或 Apache PDFBox？"></a>为什么不选用 iText 或 Apache PDFBox？</h2><h3 id="iText"><a href="#iText" class="headerlink" title="iText"></a>iText</h3><p><strong>不选用的原因：</strong></p>
-<ul>
-<li>iText 5 以后需要购买商业许可，目前 iText 已经更新到 iText 8。</li>
-</ul>
-<p>官网：<a target="_blank" rel="noopener" href="https://itextpdf.com/">https://itextpdf.com/</a></p>
-<h3 id="Apache-PDFBox"><a href="#Apache-PDFBox" class="headerlink" title="Apache PDFBox"></a>Apache PDFBox</h3><p> <strong>不选用的原因：</strong></p>
-<ul>
-<li>PDFBox生成PDF就像画图似的，文字和图像根据页面坐标画上去的，需要根据字数手动换行，使用起来比较累，学习成本大。</li>
-</ul>
-<p>官网：<a target="_blank" rel="noopener" href="https://pdfbox.apache.org/">https://pdfbox.apache.org/</a></p>
-<h3 id="Easy-POI-docx4j"><a href="#Easy-POI-docx4j" class="headerlink" title="Easy POI + docx4j"></a>Easy POI + docx4j</h3><h4 id="Easy-POI"><a href="#Easy-POI" class="headerlink" title="Easy POI"></a>Easy POI</h4><p><strong>优点：</strong></p>
-<ul>
-<li>国内开源项目（上海悟耘信息）</li>
-<li>可使用 word 或 excel 自定义模板，使用模板指令进行填充数据，模板指令语法类似于 EL 表达式。</li>
-<li>学习成本低。</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li>主要支持操作 word 和 excel，不支持操作 pdf。</li>
-</ul>
-<p>官网教程文档：<a target="_blank" rel="noopener" href="http://doc.wupaas.com/docs/easypoi/easypoi-1c0u6ksp2r091">http://doc.wupaas.com/docs/easypoi/easypoi-1c0u6ksp2r091</a></p>
-<h4 id="docx4j"><a href="#docx4j" class="headerlink" title="docx4j"></a>docx4j</h4><p><strong>优点：</strong></p>
-<ul>
-<li>开源免费</li>
-<li>可以将 word 转成 pdf</li>
-</ul>
-<p>官网：<a target="_blank" rel="noopener" href="https://www.docx4java.org/trac/docx4j">https://www.docx4java.org/trac/docx4j</a></p>
-<h2 id="PDF生成流程"><a href="#PDF生成流程" class="headerlink" title="PDF生成流程"></a>PDF生成流程</h2><p><img src="/../../image/PDF%E7%94%9F%E6%88%90%E7%A0%94%E7%A9%B6.assets/PDF%E7%94%9F%E6%88%90%E7%AE%80%E5%8D%95%E6%B5%81%E7%A8%8B.png" alt="PDF生成简单流程"></p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>主要展示业务逻辑，具体细节可以下载源码查看</p>
-<p><img src="/../../image/PDF%E7%94%9F%E6%88%90%E7%A0%94%E7%A9%B6.assets/image-20230619094602051.png" alt="image-20230619094602051">    </p>
-<p><img src="/../../image/PDF%E7%94%9F%E6%88%90%E7%A0%94%E7%A9%B6.assets/image-20230619094636423.png" alt="image-20230619094636423">    </p>
-<p>参照：<a target="_blank" rel="noopener" href="https://codeantenna.com/a/y7Xefeppal">https://codeantenna.com/a/y7Xefeppal</a></p>
-<h2 id="遇到过的问题"><a href="#遇到过的问题" class="headerlink" title="遇到过的问题"></a>遇到过的问题</h2><p>由于需要快速完成功能实现，解决问题的过程细节没有一一记录，简单列一下踩过的坑。</p>
-<ul>
-<li>数据遍历渲染问题，for 循环的数据只能在表格中展示。</li>
-<li>图片插入不显示。</li>
-<li>文件或文件夹找不到。</li>
-<li>文件或文件夹权限不够。</li>
-<li>linux 无字体，导致中文解析乱码。</li>
-<li>……</li>
-</ul>
+    <div id="collapseopenGauss" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingopenGauss">
+        <div class="panel-body">
+            <div class="collection">
+              
+                
+<a href="/2024/10/16/openGauss/opengauss%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/" class="collection-item"   itemprop="url">
+  <time datetime="2024-10-16T08:55:57.217Z" itemprop="datePublished">2024-10-16</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> oepnGauss 命令合集
+</a>
 
-      
+
+              
+                
+<a href="/2024/10/16/openGauss/CenterOS%20%E5%AE%89%E8%A3%85%20openGauss/" class="collection-item"   itemprop="url">
+  <time datetime="2024-10-16T08:55:57.215Z" itemprop="datePublished">2024-10-16</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> CenterOS 安装 openGauss
+</a>
+
+
+              
+            </div>
+        </div>
     </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://example.com/2023/06/19/PDF/Java%20%E5%AE%9E%E7%8E%B0%20PDF%20%E7%94%9F%E6%88%90/" title="Java 实现 PDF 生成" target="_blank" rel="external">http://example.com/2023/06/19/PDF/Java 实现 PDF 生成/</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
-
-
+</div>
     </div>
   </article>
-  
-    
-  <section id="comments">
-  	
-  </section>
-
-
-  
-</div>
-
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-  
-  <ul class="pager pull-left">
-    
-    <li class="prev">
-      <a href="/2024/10/16/Linux/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Linux 常用命令"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
-    
-    <li class="next">
-      <a href="/2023/06/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-    </li>
-    
-    
-    <li class="toggle-toc">
-      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
-        <i class="text-collapsed icon icon-anchor"></i>
-        <i class="text-in icon icon-close"></i>
-        <span>]</span>
-      </a>
-    </li>
-    
-  </ul>
-  
-  
-  
-  <div class="bar-right">
-    
-  </div>
-  </div>
-</nav>
-  
-
-
+   
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -511,14 +414,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-   
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-
-   
 
 
 
