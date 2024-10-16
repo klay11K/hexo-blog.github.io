@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>klay的知识星球</title>
+  <meta name="description" content="dockerdocker 常用命令帮助启动类命令 启动docker： systemctl start docker 停止docker： systemctl stop docker 重启docker： systemctl restart docker 查看docker状态： systemctl status docker 开机启动： systemctl enable docker 查看docker概">
+<meta property="og:type" content="article">
+<meta property="og:title" content="努力沉淀">
+<meta property="og:url" content="http://example.com/2024/10/16/docker/docker/index.html">
+<meta property="og:site_name" content="努力沉淀">
+<meta property="og:description" content="dockerdocker 常用命令帮助启动类命令 启动docker： systemctl start docker 停止docker： systemctl stop docker 重启docker： systemctl restart docker 查看docker状态： systemctl status docker 开机启动： systemctl enable docker 查看docker概">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-16T08:54:40.693Z">
+<meta property="article:modified_time" content="2024-07-30T03:10:05.803Z">
+<meta property="article:author" content="klay">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2024/10/16/docker/docker/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="努力沉淀" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/klay11K/klay11K.github.io" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">函数式编程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PDF/">PDF</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">踩坑记录</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag">Java基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%9B%86%E5%90%88/" rel="tag">Java集合</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Junit/" rel="tag">Junit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PDF/" rel="tag">PDF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/HTML/" style="font-size: 13px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java%E5%9F%BA%E7%A1%80/" style="font-size: 13.5px;">Java基础</a> <a href="/tags/Java%E9%9B%86%E5%90%88/" style="font-size: 13px;">Java集合</a> <a href="/tags/Junit/" style="font-size: 13px;">Junit</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 13px;">MySQL</a> <a href="/tags/PDF/" style="font-size: 13px;">PDF</a> <a href="/tags/github/" style="font-size: 13px;">github</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 13px;">函数式编程</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 13px;">微信小程序</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">计算机基础</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13px;">设计模式</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">十月 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/10/16/openGauss/opengauss%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-10-16T08:55:57.217Z" itemprop="datePublished">2024-10-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/10/16/openGauss/CenterOS%20%E5%AE%89%E8%A3%85%20openGauss/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-10-16T08:55:57.215Z" itemprop="datePublished">2024-10-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/10/16/docker/docker/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-10-16T08:54:40.693Z" itemprop="datePublished">2024-10-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Linux/">Linux</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/10/16/Linux/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Linux 常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-10-16T08:48:19.070Z" itemprop="datePublished">2024-10-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PDF/">PDF</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/06/19/PDF/Java%20%E5%AE%9E%E7%8E%B0%20PDF%20%E7%94%9F%E6%88%90/" class="title">Java 实现 PDF 生成</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-06-19T02:04:06.448Z" itemprop="datePublished">2023-06-19</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-docker/docker" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2024/10/16/docker/docker/" class="article-date">
+	  <time datetime="2024-10-16T08:54:40.693Z" itemprop="datePublished">2024-10-16</time>
+	</a>
+</span>
+        
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/10/16/docker/docker/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><h2 id="docker-常用命令"><a href="#docker-常用命令" class="headerlink" title="docker 常用命令"></a>docker 常用命令</h2><h3 id="帮助启动类命令"><a href="#帮助启动类命令" class="headerlink" title="帮助启动类命令"></a>帮助启动类命令</h3><ul>
+<li>启动docker： systemctl start docker</li>
+<li>停止docker： systemctl stop docker</li>
+<li>重启docker： systemctl restart docker</li>
+<li>查看docker状态： systemctl status docker</li>
+<li>开机启动： systemctl enable docker</li>
+<li>查看docker概要信息： docker info</li>
+<li>查看docker总体帮助文档： docker –help</li>
+<li>查看docker命令帮助文档： docker 具体命令 –help</li>
+</ul>
+<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><ul>
+<li>docker images<ul>
+<li>列出本地主机上的镜像</li>
+<li>OPTIONS说明：<ul>
+<li>-a :列出本地所有的镜像（含历史映像层）</li>
+<li>-q :只显示镜像ID。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>docker search 某个XXX镜像名字<ul>
+<li>网站<ul>
+<li><a target="_blank" rel="noopener" href="https://hub.docker.com/">https://hub.docker.com</a></li>
+</ul>
+</li>
+<li>命令<ul>
+<li>docker search [OPTIONS] 镜像名字</li>
+<li>案例</li>
+<li>OPTIONS说明：<ul>
+<li>–limit : 只列出N个镜像，默认25个</li>
+<li>docker search –limit 5 redis</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>docker pull 某个XXX镜像名字<ul>
+<li>下载镜像</li>
+<li>docker pull 镜像名字[:TAG]</li>
+<li>docker pull 镜像名字<ul>
+<li>没有TAG就是最新版</li>
+<li>等价于</li>
+<li>docker pull 镜像名字:latest</li>
+<li>docker pull ubuntu</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>docker system df 查看镜像/容器/数据卷所占的空间</li>
+<li>docker rmi 某个XXX镜像名字ID<ul>
+<li>删除镜像</li>
+<li>删除单个<ul>
+<li>docker rmi  -f 镜像ID</li>
+</ul>
+</li>
+<li>删除多个<ul>
+<li>docker rmi -f 镜像名1:TAG 镜像名2:TAG </li>
+</ul>
+</li>
+<li>删除全部<ul>
+<li>docker rmi -f $(docker images -qa)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Docker镜像commit操作案例"><a href="#Docker镜像commit操作案例" class="headerlink" title="Docker镜像commit操作案例"></a>Docker镜像commit操作案例</h4><ul>
+<li><p>docker commit提交容器副本使之成为一个新的镜像</p>
+</li>
+<li><p>docker commit -m=”提交的描述信息” -a=”作者” 容器ID 要创建的目标镜像名:[标签名]</p>
+</li>
+<li><p>案例演示ubuntu安装vim</p>
+<ul>
+<li><p>从Hub上下载ubuntu镜像到本地并成功运行</p>
+</li>
+<li><p>原始的默认Ubuntu镜像是不带着vim命令的</p>
+</li>
+<li><p>外网连通的情况下，安装vim</p>
+<p>docker容器内执行上述两条命令：<br><code>apt-get update</code><br><code>apt-get -y install vim</code></p>
+</li>
+<li><p>安装完成后，commit我们自己的新镜像</p>
+</li>
+<li><p>启动我们的新镜像并和原来的对比</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="本地镜像发布到阿里云"><a href="#本地镜像发布到阿里云" class="headerlink" title="本地镜像发布到阿里云"></a>本地镜像发布到阿里云</h4><p><a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instance/namespaces">https://cr.console.aliyun.com/cn-hangzhou/instance/namespaces</a></p>
+<ol>
+<li>创建命名空间</li>
+<li>创建镜像仓库（选择本地仓库）</li>
+<li>根据提示的命令行来操作 push 镜像</li>
+<li>拉取阿里云镜像，在本地进行启动</li>
+</ol>
+<h4 id="本地镜像发布到私有库"><a href="#本地镜像发布到私有库" class="headerlink" title="本地镜像发布到私有库"></a>本地镜像发布到私有库</h4><ul>
+<li><p>Docker Registry 是什么</p>
+<ul>
+<li>官方Docker Hub地址：<a target="_blank" rel="noopener" href="https://hub.docker.com/%EF%BC%8C%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2%E4%BA%86%E4%B8%94%E5%87%86%E5%A4%87%E8%A2%AB%E9%98%BF%E9%87%8C%E4%BA%91%E5%8F%96%E4%BB%A3%E7%9A%84%E8%B6%8B%E5%8A%BF%EF%BC%8C%E4%B8%8D%E5%A4%AA%E4%B8%BB%E6%B5%81%E3%80%82">https://hub.docker.com/，中国大陆访问太慢了且准备被阿里云取代的趋势，不太主流。</a></li>
+<li>Dockerhub、阿里云这样的公共镜像仓库可能不太方便，涉及机密的公司不可能提供镜像给公网，所以需要创建一个本地私人仓库供给团队使用，基于公司内部项目构建镜像。</li>
+</ul>
+<p>Docker Registry 是官方提供的工具，可以用于构建私有镜像仓库</p>
+</li>
+<li><p>将本地镜像推送到私有库</p>
+<ul>
+<li><p>下载镜像 Docker Registry <code>docker pull registry</code></p>
+</li>
+<li><p>运行私有库Registry，相当于本地有个私有Docker hub</p>
+<p><code>docker run -d -p 5000:5000 -v /hyk/myregistry/:/tmp/registry --privileged=true registry</code><br>默认情况，仓库被创建在容器的/var/lib/registry目录下，建议自行用容器卷映射，方便于宿主机联调</p>
+</li>
+<li><p>案例演示创建一个新镜像，ubuntu安装ifconfig命令</p>
+<ul>
+<li><p>从Hub上下载ubuntu镜像到本地并成功运行</p>
+</li>
+<li><p>原始的Ubuntu镜像是不带着ifconfig命令的</p>
+</li>
+<li><p>外网连通的情况下，安装ifconfig命令并测试通</p>
+<ul>
+<li>过docker容器内执行上述两条命令：<br><code>apt-get update</code><br><code>apt-get install net-tools</code></li>
+</ul>
+</li>
+<li><p>安装完成后，commit我们自己的新镜像</p>
+<p>公式：<br><code>docker commit -m=&quot;提交的描述信息&quot; -a=&quot;作者&quot; 容器ID 要创建的目标镜像名:[标签名]</code><br>命令：在容器外执行，记得<br><code>docker commit -m=&quot;ifconfig cmd add&quot; -a=&quot;zzyy&quot; a69d7c825c4f zzyyubuntu:1.2</code></p>
+</li>
+<li><p>启动我们的新镜像并和原来的对比</p>
+</li>
+</ul>
+</li>
+<li><p>curl验证私服库上有什么镜像 <code>curl -XGET http://192.168.10.100:5000/v2/_catalog</code></p>
+</li>
+<li><p>将新镜像zzyyubuntu:1.2修改符合私服规范的Tag </p>
+<p>按照公式： <code>docker tag 镜像:Tag Host:Port/Repository:Tag</code></p>
+<p>使用命令 <code>docker tag 将zzyyubuntu:1.2 这个镜像修改为192.168.10.100:5000/zzyyubuntu:1.2</code></p>
+<p><code>docker tag zzyyubuntu:1.2 192.168.111.162:5000/zzyyubuntu:1.2</code></p>
+</li>
+<li><p>修改配置文件使之支持http</p>
+<p>别无脑照着复制，registry-mirrors 配置的是国内阿里提供的镜像加速地址，不用加速的话访问官网的会很慢。<br>2个配置中间有个逗号 ‘,’别漏了，这个配置是json格式的。<br>2个配置中间有个逗号 ‘,’别漏了，这个配置是json格式的。<br>2个配置中间有个逗号 ‘,’别漏了，这个配置是json格式的。</p>
+<p>vim命令新增如下红色内容：<code>vim /etc/docker/daemon.json</code><br>{<br>“registry-mirrors”: [“<a href="https://aa25jngu.mirror.aliyuncs.com&quot;]">https://aa25jngu.mirror.aliyuncs.com&quot;]</a>,<br>“insecure-registries”: [“192.168.111.162:5000”]<br>}</p>
+</li>
+<li><p>push推送到私服</p>
+<p><code>docker push 192.168.10.100:5000/ubuntu:1.2</code></p>
+</li>
+<li><p>curl验证私服库上有什么镜像</p>
+<p><code>curl -XGET http://192.168.10.100:5000/v2/_catalog</code></p>
+</li>
+<li><p>pull到本地并运行</p>
+<p><code>docker pull 192.168.10.100:5000/ubuntu:1.2</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h3><h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><p>docker run [OPTIONS] IMAGE [COMMAND] [ARG…]</p>
+<ul>
+<li><p> OPTIONS说明（常用）：有些是一个减号，有些是两个减号<br> <br>–name=”容器新名字”       为容器指定一个名称；<br>-d: 后台运行容器并返回容器ID，也即启动守护式容器(后台运行)；<br> <br>-i：以交互模式运行容器，通常与 -t 同时使用；<br>-t：为容器重新分配一个伪输入终端，通常与 -i 同时使用；<br>也即启动交互式容器(前台有伪终端，等待交互)；<br> <br>-P: 随机端口映射，大写P…</p>
+</li>
+<li><p>启动交互式容器(前台命令行)</p>
+<p>使用镜像centos:latest以交互模式启动一个容器,在容器内执行/bin/bash命令。<br>docker run -it centos /bin/bash</p>
+<p>参数说明：<br>-i: 交互式操作。<br>-t: 终端。<br>centos : centos 镜像。<br>/bin/bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 /bin/bash。<br>要退出终端，直接输入 exit:</p>
+</li>
+</ul>
+<h4 id="退出终端"><a href="#退出终端" class="headerlink" title="退出终端"></a>退出终端</h4><p>两种退出方式</p>
+<ul>
+<li>exit<ul>
+<li>run进去容器，exit退出，容器停止</li>
+</ul>
+</li>
+<li>ctrl+p+q<ul>
+<li>run进去容器，ctrl+p+q退出，容器不停止</li>
+</ul>
+</li>
+</ul>
+<h4 id="启动已停止运行的容器"><a href="#启动已停止运行的容器" class="headerlink" title="启动已停止运行的容器"></a>启动已停止运行的容器</h4><ul>
+<li>docker start 容器ID或者容器名</li>
+<li>docker restart 容器ID或者容器名</li>
+<li>docker stop 容器ID或者容器名</li>
+<li>docker kill 容器ID或容器名</li>
+</ul>
+<p>docker kill 容器ID或容器名</p>
+<h4 id="删除已停止的容器"><a href="#删除已停止的容器" class="headerlink" title="删除已停止的容器"></a>删除已停止的容器</h4><ul>
+<li>docker rm 容器ID<ul>
+<li>一次性删除多个容器实例<ul>
+<li>docker rm -f $(docker ps -a -q)</li>
+<li>docker ps -a -q | xargs docker rm</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="启动守护式容器-后台服务器"><a href="#启动守护式容器-后台服务器" class="headerlink" title="启动守护式容器(后台服务器)"></a>启动守护式容器(后台服务器)</h4><ul>
+<li>在大部分的场景下，我们希望 docker 的服务是在后台运行的， 我们可以过 -d 指定容器的后台运行模式。</li>
+<li>docker run -d 容器名</li>
+<li>redis 前后台启动演示case<ul>
+<li>前台交互式启动 docker run -it redis:6.0.8</li>
+<li>后台守护式启动 docker run -d redis:6.0.8</li>
+</ul>
+</li>
+<li>查看容器日志 docker logs 容器ID</li>
+<li>查看容器内运行的进程 docker top 容器ID</li>
+<li>查看容器内部细节 docker inspect 容器ID</li>
+</ul>
+<h4 id="进入正在运行的容器并以命令行交互"><a href="#进入正在运行的容器并以命令行交互" class="headerlink" title="进入正在运行的容器并以命令行交互"></a>进入正在运行的容器并以命令行交互</h4><ul>
+<li>docker exec -it 容器ID bashShell</li>
+<li>重新进入docker attach 容器ID</li>
+<li>案例演示，用centos或者unbuntu都可以</li>
+<li>上述两个区别<ul>
+<li>attach 直接进入容器启动命令的终端，不会启动新的进程 用exit退出，会导致容器的停止。</li>
+<li>exec 是在容器中打开新的终端，并且可以启动新的进程 用exit退出，不会导致容器的停止。</li>
+</ul>
+</li>
+<li>推荐大家使用 docker exec 命令，因为退出容器终端，不会导致容器的停止。</li>
+<li>用之前的redis容器实例进入试试<ul>
+<li>进入redis服务<ul>
+<li>docker exec -it 容器ID /bin/bash</li>
+<li>docker exec -it 容器ID redis-cli</li>
+<li>一般用-d后台启动的程序，再用exec进入对应容器实例</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="从容器内拷贝文件到主机上"><a href="#从容器内拷贝文件到主机上" class="headerlink" title="从容器内拷贝文件到主机上"></a>从容器内拷贝文件到主机上</h4><ul>
+<li>docker cp  容器ID:容器内路径 目的主机路径</li>
+</ul>
+<h4 id="导入和导出容器"><a href="#导入和导出容器" class="headerlink" title="导入和导出容器"></a>导入和导出容器</h4><ul>
+<li>export 导出容器的内容留作为一个tar归档文件[对应import命令]</li>
+<li>import 从tar包中的内容创建一个新的文件系统再导入为镜像[对应export]</li>
+<li>案例<ul>
+<li>docker export 容器ID &gt; 文件名.tar</li>
+<li>cat 文件名.tar | docker import - 镜像用户/镜像名:镜像版本号</li>
+</ul>
+</li>
+</ul>
+<h3 id="Docker-容器卷"><a href="#Docker-容器卷" class="headerlink" title="Docker 容器卷"></a>Docker 容器卷</h3><h4 id="宿主vs容器之间映射添加容器卷"><a href="#宿主vs容器之间映射添加容器卷" class="headerlink" title="宿主vs容器之间映射添加容器卷"></a>宿主vs容器之间映射添加容器卷</h4><ul>
+<li>直接命令添加<ul>
+<li><code>命令 docker run -it --privileged=true -v /宿主机绝对路径目录:/容器内目录  镜像名</code></li>
+<li>查看数据卷是否挂载成功 <code>docker inspect 容器ID</code></li>
+<li>容器和宿主机之间数据共享<ol>
+<li>docker修改，主机同步获得</li>
+<li> 主机修改，docker同步获得</li>
+<li>docker容器stop，主机修改，docker容器重启看数据是否同步。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>读写规则映射添加说明<ul>
+<li>读写(默认)<ul>
+<li> <code>docker run -it --privileged=true -v /宿主机绝对路径目录:/容器内目录:rw 镜像名</code></li>
+</ul>
+</li>
+<li>只读<ul>
+<li>容器实例内部被限制，只能读取不能写 <code>docker run -it --privileged=true -v /宿主机绝对路径目录:/容器内目录:ro  镜像名</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>卷的继承和共享<ul>
+<li>容器1完成和宿主机的映射 <code>docker run -it --privileged=true -v /mydocker/u:/tmp --name u1 ubuntu</code></li>
+<li>容器2继承容器1的卷规则 <code>docker run -it  --privileged=true --volumes-from 父类  --name u2 ubuntu</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="docker-常规安装"><a href="#docker-常规安装" class="headerlink" title="docker 常规安装"></a>docker 常规安装</h2><h3 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h3><ul>
+<li>docker hub上面查找tomcat镜像<ul>
+<li>docker search tomcat</li>
+</ul>
+</li>
+<li>从docker hub上拉取tomcat镜像到本地<ul>
+<li>docker pull tomcat</li>
+</ul>
+</li>
+<li>docker images查看是否有拉取到的tomcat</li>
+<li>使用tomcat镜像创建容器实例(也叫运行镜像)<ul>
+<li>docker run -it -p 8080:8080 tomcat<ul>
+<li>-p 小写，主机端口:docker容器端口</li>
+<li>-P 大写，随机分配端口</li>
+<li>i:交互</li>
+<li>t:终端</li>
+<li>d:后台</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>访问猫首页<ul>
+<li>问题</li>
+<li>解决<ul>
+<li>可能没有映射端口或者没有关闭防火墙</li>
+<li>把webapps.dist目录换成webapps<ul>
+<li>先成功启动tomcat</li>
+<li>查看webapps 文件夹查看为空</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>免修改版说明<ul>
+<li>docker pull billygoo/tomcat8-jdk8</li>
+<li>docker run -d -p 8080:8080 –name mytomcat8 billygoo/tomcat8-jdk8</li>
+</ul>
+</li>
+</ul>
+<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><ul>
+<li><p>docker hub上面查找mysql镜像</p>
+</li>
+<li><p>从docker hub上(阿里云加速器)拉取mysql镜像到本地标签为5.7</p>
+</li>
+<li><p>使用mysql5.7镜像创建容器(也叫运行镜像)</p>
+<ul>
+<li><p>命令出处，哪里来的？</p>
+</li>
+<li><p>简单版</p>
+<ul>
+<li><p>使用mysql镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 -e MYSQLROOTPASSWORD=123456 -d mysql:5.7</span><br><span class="line">docker ps</span><br><span class="line">docker exec -it 容器ID /bin/bash</span><br><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure></li>
+<li><p>建库建表插入数据</p>
+</li>
+<li><p>外部Win10也来连接运行在dokcer上的mysql容器实例服务</p>
+</li>
+<li><p>问题</p>
+<ul>
+<li><p>插入中文数据试试</p>
+<ul>
+<li><p>为什么报错?</p>
+<ul>
+<li><p>docker上默认字符集编码隐患</p>
+<p>docker里面的mysql容器实例查看，内容如下：</p>
+<p><code>SHOW VARIABLES LIKE &#39;character%&#39;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>删除容器后，里面的mysql数据如何办</p>
+<ul>
+<li>容器实例一删除，你还有什么？ 删容器到跑路。。。。。？</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>实战版</p>
+<ul>
+<li><p>新建mysql容器实例</p>
+<p>docker run -td -p 3306:3306 –privileged=true -v /zzyyuse/mysql/log:/var/log/mysql -v /zzyyuse/mysql/data:/var/lib/mysql -v /zzyyuse/mysql/conf:/etc/mysql/conf.d -e MYSQLROOTPASSWORD=123456 –name mysql mysql:5.7 bash</p>
+</li>
+<li><p>新建my.cnf</p>
+<ul>
+<li><p>通过容器卷同步给mysql容器实例</p>
+<p>[client]<br>defaultcharacterset=utf8<br>[mysqld]<br>collationserver = utf8generalci<br>characterset_server = utf8</p>
+</li>
+</ul>
+</li>
+<li><p>重新启动mysql容器实例再重新进入并查看字符编码</p>
+</li>
+<li><p>再新建库新建表再插入中文测试</p>
+</li>
+<li><p>结论：</p>
+<p>之前的DB 无效，修改字符集操作+重启mysql容器实例之后的DB 有效，需要新建</p>
+<p>结论：docker安装完MySQL并run出容器后，建议请先修改完字符集编码后再新建mysql库-表-插数据</p>
+</li>
+<li><p>假如将当前容器实例删除，再重新来一次，之前建的db01实例还有吗？trytry</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2024/10/16/docker/docker/" title="" target="_blank" rel="external">http://example.com/2024/10/16/docker/docker/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2024/10/16/openGauss/CenterOS%20%E5%AE%89%E8%A3%85%20openGauss/" title="(no title)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2024/10/16/Linux/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Linux 常用命令"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/klay11K/klay11K.github.io" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
