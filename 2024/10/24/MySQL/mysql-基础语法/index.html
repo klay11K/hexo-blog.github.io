@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>klay的知识星球</title>
+  <meta name="description" content="MySQL 基本语法逻辑运算符 not：逻辑非 1234-- 找到不是在2000-2010年间year上映的电影 ✓SELECT * FROM movies WHERE NOT (YEAR &gt;&#x3D; 2000 AND YEAR &lt;&#x3D; 2010); and：逻辑与  or：逻辑或   区间条件 between … and  12-- 找到在2000-2010年间year上映的电影SELECT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="努力沉淀">
+<meta property="og:url" content="http://example.com/2024/10/24/MySQL/mysql-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="努力沉淀">
+<meta property="og:description" content="MySQL 基本语法逻辑运算符 not：逻辑非 1234-- 找到不是在2000-2010年间year上映的电影 ✓SELECT * FROM movies WHERE NOT (YEAR &gt;&#x3D; 2000 AND YEAR &lt;&#x3D; 2010); and：逻辑与  or：逻辑或   区间条件 between … and  12-- 找到在2000-2010年间year上映的电影SELECT">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-24T01:34:06.162Z">
+<meta property="article:modified_time" content="2024-07-26T03:55:08.384Z">
+<meta property="article:author" content="klay">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2024/10/24/MySQL/mysql-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="努力沉淀" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/klay11K/klay11K.github.io" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">函数式编程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PDF/">PDF</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/openGauss/">openGauss</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">踩坑记录</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag">Java基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%9B%86%E5%90%88/" rel="tag">Java集合</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Junit/" rel="tag">Junit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PDF/" rel="tag">PDF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openGauss/" rel="tag">openGauss</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/HTML/" style="font-size: 13px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java%E5%9F%BA%E7%A1%80/" style="font-size: 13.67px;">Java基础</a> <a href="/tags/Java%E9%9B%86%E5%90%88/" style="font-size: 13px;">Java集合</a> <a href="/tags/Junit/" style="font-size: 13px;">Junit</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 13px;">MySQL</a> <a href="/tags/PDF/" style="font-size: 13px;">PDF</a> <a href="/tags/docker/" style="font-size: 13px;">docker</a> <a href="/tags/github/" style="font-size: 13px;">github</a> <a href="/tags/openGauss/" style="font-size: 13.33px;">openGauss</a> <a href="/tags/redis/" style="font-size: 13px;">redis</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 13px;">函数式编程</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 13px;">微信小程序</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">计算机基础</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13px;">设计模式</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">十月 2024</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/10/24/MySQL/mysql-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-10-24T01:34:06.162Z" itemprop="datePublished">2024-10-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/10/24/MySQL/mysql-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-10-24T01:34:03.049Z" itemprop="datePublished">2024-10-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/redis/">redis</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/10/16/redis/redis/" class="title">redis 学习笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-10-16T09:08:29.106Z" itemprop="datePublished">2024-10-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/openGauss/">openGauss</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/10/16/openGauss/opengauss%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/" class="title">oepnGauss 命令合集</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-10-16T08:55:57.217Z" itemprop="datePublished">2024-10-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/openGauss/">openGauss</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/10/16/openGauss/CenterOS%20%E5%AE%89%E8%A3%85%20openGauss/" class="title">CenterOS 安装 openGauss</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-10-16T08:55:57.215Z" itemprop="datePublished">2024-10-16</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-MySQL/mysql-基础语法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2024/10/24/MySQL/mysql-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="article-date">
+	  <time datetime="2024-10-24T01:34:06.162Z" itemprop="datePublished">2024-10-24</time>
+	</a>
+</span>
+        
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/10/24/MySQL/mysql-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="MySQL-基本语法"><a href="#MySQL-基本语法" class="headerlink" title="MySQL 基本语法"></a>MySQL 基本语法</h1><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><ul>
+<li><p>not：逻辑非</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找到不是在2000-2010年间year上映的电影 ✓</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">FROM</span> movies </span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> (<span class="keyword">YEAR</span> <span class="operator">&gt;=</span> <span class="number">2000</span> <span class="keyword">AND</span> <span class="keyword">YEAR</span> <span class="operator">&lt;=</span> <span class="number">2010</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>and：逻辑与</p>
+</li>
+<li><p>or：逻辑或</p>
+</li>
+</ul>
+<h2 id="区间条件"><a href="#区间条件" class="headerlink" title="区间条件"></a>区间条件</h2><ul>
+<li><p>between … and </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找到在2000-2010年间year上映的电影</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> movies <span class="keyword">WHERE</span> <span class="keyword">year</span> <span class="keyword">BETWEEN</span> <span class="number">2000</span> <span class="keyword">AND</span> <span class="number">2010</span></span><br></pre></td></tr></table></figure></li>
+<li><p>大于或者小于</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找到在2000-2010年间year上映的电影</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> movies <span class="keyword">WHERE</span> <span class="keyword">year</span> <span class="operator">&gt;=</span> <span class="number">2000</span> <span class="keyword">AND</span> <span class="keyword">year</span> <span class="operator">&lt;=</span> <span class="number">2010</span></span><br></pre></td></tr></table></figure></li>
+<li><p>not between … and …</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找到不是在2000-2010年间year上映的电影</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> movies <span class="keyword">WHERE</span> <span class="keyword">year</span> <span class="keyword">NOT</span> <span class="keyword">BETWEEN</span> <span class="number">2000</span> <span class="keyword">AND</span> <span class="number">2010</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Not</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> movies <span class="keyword">WHERE</span> <span class="keyword">year</span> <span class="keyword">NOT</span> (<span class="keyword">year</span> <span class="operator">&gt;=</span> <span class="number">2000</span> <span class="keyword">AND</span> <span class="keyword">year</span> <span class="operator">&lt;=</span> <span class="number">2010</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><ul>
+<li><p>case when 语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 方式一</span></span><br><span class="line"><span class="keyword">CASE</span> 字段 <span class="keyword">WHEN</span> 预期值 <span class="keyword">THEN</span> 结果<span class="number">1</span> <span class="keyword">ELSE</span> 结果<span class="number">2</span> <span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 方式二</span></span><br><span class="line"><span class="comment">-- 如果 age &lt; 20 返回&#x27;20岁以下&#x27;，如果 age &lt; 25 返回&#x27;20-24岁&#x27;，如果 age &gt;= 25 返回&#x27;25岁及以上&#x27; ...</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    device_id,</span><br><span class="line">    gender,</span><br><span class="line">    <span class="keyword">case</span></span><br><span class="line">        <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">20</span> <span class="keyword">then</span> <span class="string">&#x27;20岁以下&#x27;</span></span><br><span class="line">        <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">&#x27;20-24岁&#x27;</span></span><br><span class="line">        <span class="keyword">when</span> age <span class="operator">&gt;=</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">&#x27;25岁及以上&#x27;</span></span><br><span class="line">        <span class="keyword">else</span> <span class="string">&#x27;其他&#x27;</span></span><br><span class="line">    <span class="keyword">end</span> age_cut</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">    user_profile</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><p>like 关键字左边最好不要将进行模糊（%），会导致索引失效</p>
+<ul>
+<li><p>like 字段 %模糊关键字%</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找到所有Toy Story系列电影 </span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> movies <span class="keyword">WHERE</span> title <span class="keyword">LIKE</span> <span class="string">&#x27;Toy Story%&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>not like</p>
+</li>
+</ul>
+<h2 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h2><ul>
+<li><p>distinct</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 按导演名排重列出所有电影(只显示导演)</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Director <span class="keyword">FROM</span> movies;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><ul>
+<li><p>order by 排序字段 desc/asc </p>
+<ul>
+<li>asc：升序</li>
+<li>desc：降序</li>
+</ul>
+</li>
+<li><p>按照中文拼音排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">CONVERT</span>(a.apartment_name <span class="keyword">USING</span> gbk) <span class="keyword">desc</span><span class="operator">/</span><span class="keyword">asc</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="limit-和-offset"><a href="#limit-和-offset" class="headerlink" title="limit 和 offset"></a>limit 和 offset</h2><p>你可以想象一下从一条长绳子剪下一小段的过程，我们通过 <code>OFFSET</code> 指定从哪里开始剪，用 <code>LIMIT</code> 指定剪下多少长度。</p>
+<ul>
+<li><p>limit：指定只返回多少行</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 按电影名字母序升序排列，列出前 5 部电影</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> movies <span class="keyword">ORDER</span> <span class="keyword">BY</span> Title <span class="keyword">ASC</span> limit <span class="number">5</span> </span><br></pre></td></tr></table></figure></li>
+<li><p>offset：指定从哪一行开始返回</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 按电影名字母序升序排列，列出前 5 部电影之后的 5 部电影</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> movies <span class="keyword">ORDER</span> <span class="keyword">BY</span> Title <span class="keyword">ASC</span> limit <span class="number">5</span> <span class="keyword">OFFSET</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果按片长排列，John Lasseter导演导过片长第3长的电影是哪部，列出名字即可</span></span><br><span class="line"><span class="keyword">SELECT</span> Title <span class="keyword">FROM</span> movies <span class="keyword">WHERE</span> Director <span class="operator">=</span> <span class="string">&#x27;John Lasseter&#x27;</span>  </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Length_minutes <span class="keyword">DESC</span> limit <span class="number">1</span> <span class="keyword">OFFSET</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="连表更新"><a href="#连表更新" class="headerlink" title="连表更新"></a>连表更新</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> bill_generate_date <span class="keyword">as</span> bgd </span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> check_in <span class="keyword">as</span> ci <span class="keyword">on</span> ci.id <span class="operator">=</span> bgd.check_in_id <span class="keyword">and</span> ci.`status` <span class="keyword">in</span> (<span class="string">&#x27;checked_in&#x27;</span>,<span class="string">&#x27;check_out_apply&#x27;</span>) <span class="keyword">and</span> ci.delete_flag <span class="operator">=</span> <span class="string">&#x27;0&#x27;</span> <span class="keyword">and</span> ci.apartment_id <span class="operator">=</span> <span class="string">&#x27;1628296594271113217&#x27;</span></span><br><span class="line"><span class="keyword">set</span> bgd.deadline <span class="operator">=</span> <span class="string">&#x27;2024-02-29&#x27;</span></span><br><span class="line"><span class="keyword">where</span> bgd.bill_type <span class="operator">=</span> <span class="string">&#x27;electricity&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="连表删除"><a href="#连表删除" class="headerlink" title="连表删除"></a>连表删除</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> t1,t2,t3 <span class="keyword">from</span> electricity_charging_bill <span class="keyword">as</span> t1 </span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> bill_payment <span class="keyword">as</span> t2 <span class="keyword">on</span> t2.bill_id <span class="operator">=</span> t1.id</span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> various_bill_owner <span class="keyword">as</span> t3 <span class="keyword">on</span> t3.various_bill_id <span class="operator">=</span> t1.id</span><br><span class="line"><span class="keyword">where</span> t1.apartment_id <span class="operator">=</span> <span class="string">&#x27;1628296594271113217&#x27;</span> <span class="keyword">and</span> t1.delete_flag <span class="operator">=</span> <span class="string">&#x27;0&#x27;</span> <span class="keyword">and</span> t1.bill_id <span class="operator">=</span> <span class="string">&#x27;1772866015684857857&#x27;</span> <span class="keyword">and</span> t1.is_published <span class="operator">=</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="操作-JSON"><a href="#操作-JSON" class="headerlink" title="操作 JSON"></a>操作 JSON</h1><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><ul>
+<li><p>删除 json 数组中的某个属性</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> work_order <span class="keyword">set</span> file_info_list <span class="operator">=</span> json_remove(file_info_list,<span class="string">&#x27;$[3].url&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="MySQL排序规则"><a href="#MySQL排序规则" class="headerlink" title="MySQL排序规则"></a>MySQL排序规则</h1><p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/kingsonfu/p/9780287.html">https://www.cnblogs.com/kingsonfu/p/9780287.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_33858249/article/details/88804088">https://blog.csdn.net/weixin_33858249/article/details/88804088</a></p>
+<h1 id="MySQL高级"><a href="#MySQL高级" class="headerlink" title="MySQL高级"></a>MySQL高级</h1><h3 id="什么是索引？"><a href="#什么是索引？" class="headerlink" title="什么是索引？"></a>什么是索引？</h3><p>索引（index）是帮助Mysql高效获取数据的数据结构。</p>
+<p>可以得到索引的本质：索引是数据结构。</p>
+<p><strong>你可以简单理解为“排好序的快速查找数据结构”。</strong>索引为了排序和查找</p>
+<p><strong>我们平常所说的索引，如果没有特别指明，都是指B树（多路搜索树，并一定是二叉的）结构组织的索引</strong></p>
+<h2 id="索引的优势"><a href="#索引的优势" class="headerlink" title="索引的优势"></a>索引的优势</h2><ol>
+<li>提高数据检索的效率，降低数据库的IO成本</li>
+<li>降低数据排序的成本，降低了CPU的消耗</li>
+</ol>
+<h2 id="索引的劣势"><a href="#索引的劣势" class="headerlink" title="索引的劣势"></a>索引的劣势</h2><ol>
+<li>实际上索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录，所以索引也是要占用空间的</li>
+<li>虽然索引大大提高了查询速度，同时却会降低更新表的速度，如对表进行INSERT、UPDATE和DELETE。因为更新表时，Mysql不仅哟啊保存数据，还要保存一下索引文件每次更新添加了索引列的字段，都会调整因为更新所带来的的键值变化后的索引信息。</li>
+<li>索引只是提高效率的一个因素，如果你的MySQL有大数据两的表，就需要花时间研究建立最优秀的索引，或优化查询语句，好的索引需要不断维护</li>
+</ol>
+<h2 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h2><ol>
+<li>单值索引：即一个索引只包含单个列，一个表可以有多个单列索引</li>
+<li>唯一索引：索引列的值必须唯一，但允许有空值</li>
+<li>复合索引：即一个索引包含多个列</li>
+</ol>
+<h2 id="MySQL索引结构"><a href="#MySQL索引结构" class="headerlink" title="MySQL索引结构"></a>MySQL索引结构</h2><h2 id="哪些情况下需要创建索引"><a href="#哪些情况下需要创建索引" class="headerlink" title="哪些情况下需要创建索引"></a>哪些情况下需要创建索引</h2><ol>
+<li>主键自动创建唯一索引</li>
+<li>频繁作为查询条件的字段应该创建索引</li>
+<li>查询中与其他表关联的字段，外键关系建立索引</li>
+<li>查询中的排序的字段，排序字段若通过索引去访问将大大提高排序速度</li>
+<li>查询中统计或分组字段</li>
+<li>单键/组合索引的选择问题（在高并发下倾向创建组合索引）</li>
+</ol>
+<p><strong>应为经常查询和经常排序的数据列建立索引。</strong></p>
+<h2 id="哪些情况下不需要创建索引"><a href="#哪些情况下不需要创建索引" class="headerlink" title="哪些情况下不需要创建索引"></a>哪些情况下不需要创建索引</h2><ol>
+<li>频繁更新的字段不适合创建索引</li>
+<li>Where条件里用不到的字段不创建索引</li>
+<li>表记录太少不需要创建索引</li>
+<li>数据重复且平均分布的字段，不需要建立索引</li>
+</ol>
+<p><strong>索引的选择性是指索引列中不同值的数目与表中记录数的比。如果一个表中有2000条记录，表索引列有1980个不同的值，那么这个索引的选择性就是1980/2000==0.99.一个索引的选择性越接近于1，这个索引的效率就越高。</strong></p>
+<h1 id="MySQL-常用函数"><a href="#MySQL-常用函数" class="headerlink" title="MySQL 常用函数"></a>MySQL 常用函数</h1><p>详细教程参考：<a target="_blank" rel="noopener" href="https://www.sjkjc.com/mysql-ref/">https://www.sjkjc.com/mysql-ref/</a></p>
+<h2 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h2><ul>
+<li><p>CURDATE()：获取当前系统的日期值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> CURDATE(); # <span class="number">2022</span><span class="number">-12</span><span class="number">-02</span></span><br></pre></td></tr></table></figure></li>
+<li><p>DATE_ADD() 和 DATE_SUB()：向日期加上或减去指定的时间间隔</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> DATE_ADD(CURDATE(),<span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">DAY</span>); # <span class="number">2022</span><span class="number">-12</span><span class="number">-03</span></span><br><span class="line"><span class="keyword">select</span> DATE_SUB(CURDATE(),<span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">DAY</span>); # <span class="number">2022</span><span class="number">-12</span><span class="number">-01</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> DATE_ADD(now(), <span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">DAY</span>); # <span class="number">2022</span><span class="number">-12</span><span class="number">-02</span> <span class="number">12</span>:<span class="number">03</span>:<span class="number">20</span></span><br><span class="line"><span class="keyword">select</span> DATE_SUB(now(),<span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">DAY</span>); # <span class="number">2022</span><span class="number">-12</span><span class="number">-01</span> <span class="number">12</span>:<span class="number">03</span>:<span class="number">20</span></span><br></pre></td></tr></table></figure></li>
+<li><p>maketime(h,m,s)：生成时间，HH:mm:ss</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> maketime(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>) # <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line"><span class="keyword">select</span> maketime(<span class="number">23</span>,<span class="number">59</span>,<span class="number">59</span>) # <span class="number">23</span>:<span class="number">59</span>:<span class="number">59</span></span><br></pre></td></tr></table></figure></li>
+<li><p>year()：获取日期的年份</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">year</span>(<span class="string">&#x27;2022-03-19&#x27;</span>) # <span class="number">2022</span></span><br></pre></td></tr></table></figure></li>
+<li><p>month()：获取日期的月份</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">month</span>(<span class="string">&#x27;2022-03-19&#x27;</span>) # <span class="number">03</span></span><br></pre></td></tr></table></figure></li>
+<li><p>day()：获取日期的天数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">day</span>(<span class="string">&#x27;2022-03-19&#x27;</span>) # <span class="number">19</span></span><br></pre></td></tr></table></figure></li>
+<li><p>date_format()日期格式化</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/shuilangyizu/p/8036620.html">https://www.cnblogs.com/shuilangyizu/p/8036620.html</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> date_format(now(),<span class="string">&#x27;%Y%m%d%h%i%S&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
+<li><p>CONCAT()：拼接字符串</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> CONCAT(<span class="string">&#x27;2022-12-05&#x27;</span>, <span class="string">&#x27; &#x27;</span>,maketime(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>)) # <span class="number">2022</span><span class="number">-12</span><span class="number">-05</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br></pre></td></tr></table></figure></li>
+<li><p>POSITION(substr in str,)：返回一个字符串在另一个字符串中第一次出现的位置的数字索引</p>
+</li>
+<li><p>LOCATE(str, substr)：返回一个字符串在另一个字符串中第一次出现的位置的数字索引</p>
+</li>
+<li><p>INSTR(str, substr)：返回一个字符串在另一个字符串中第一次出现的位置的数字索引</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">POSITION</span>(<span class="string">&#x27;WO&#x27;</span> <span class="keyword">in</span> <span class="string">&#x27;WO123&#x27;</span>) <span class="comment">-- 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> LOCATE(<span class="string">&#x27;WO&#x27;</span>,<span class="string">&#x27;WO123&#x27;</span>) <span class="comment">-- 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> INSTR(<span class="string">&#x27;WO&#x27;</span>,<span class="string">&#x27;WO123&#x27;</span>) <span class="comment">-- 1</span></span><br></pre></td></tr></table></figure></li>
+<li><p>SUBSTRING_INDEX(str, delim, count)：返回一个字符串中指定分隔符出现在指定次数之前的子字符串。</p>
+<ul>
+<li>str：必须的，原字符串</li>
+<li>delim：必须的，在原字符串中搜索的分隔符。</li>
+<li>count：必须的，分隔符出现的次数。如果 <code>count</code> 为负数，则从字符串尾部向前开始计数分隔符，返回分隔符之后的子字符串。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id,SUBSTRING_INDEX(<span class="string">&#x27;http:/ur/bisdgboy777&#x27;</span>,<span class="string">&#x27;/&#x27;</span>,<span class="number">-1</span>) <span class="comment">-- bisdgboy777</span></span><br></pre></td></tr></table></figure></li>
+<li><p>LEFT(str,length)：从指定字符串的左侧返回指定数量的字符组成的字符串</p>
+<ul>
+<li>str：必须的，需要从中提取字符的字符串。</li>
+<li>length：必须的，需要从字符串中提取字符的数量</li>
+</ul>
+</li>
+<li><p>RIGHT(str,length)：从指定字符串的右侧返回指定数量的字符组成的字符串</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">LEFT</span>(<span class="string">&#x27;27,male&#x27;</span>,<span class="number">2</span>) <span class="comment">-- 27</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">RIGHT</span>(<span class="string">&#x27;27,male&#x27;</span>,<span class="number">2</span>) <span class="comment">-- le</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
+<li><p>CONVERT</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 转为 gbk 编码，并进行排序</span></span><br><span class="line"><span class="keyword">CONVERT</span>(a.apartment_name <span class="keyword">USING</span> gbk) $&#123;sortValue&#125;</span><br><span class="line"><span class="comment">-- 将 varchar 类型转为 数值类型 并进行排序</span></span><br><span class="line"><span class="keyword">CONVERT</span>(rm.room_number,SIGNED <span class="type">INTEGER</span>) $&#123;sortValue&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><ul>
+<li><p>if(var1,var2,var3)</p>
+<ul>
+<li>var1：条件表达式</li>
+<li>var2：var1 为 true 时返回的值</li>
+<li>var3：var1 为 false 时返回的值</li>
+</ul>
+<p>例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">    if (</span><br><span class="line">        age <span class="operator">&lt;</span> <span class="number">25</span> <span class="keyword">or</span> age <span class="keyword">is</span> <span class="keyword">null</span>,</span><br><span class="line">        <span class="string">&#x27;25岁以下&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;25岁及以上&#x27;</span></span><br><span class="line">    ) <span class="keyword">as</span> age_cut,</span><br><span class="line">    <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> number</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">    user_profile</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> age_cut</span><br></pre></td></tr></table></figure></li>
+<li><p>CASE 语法：相当于 if-elseif-else</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 方式一</span></span><br><span class="line"><span class="keyword">CASE</span> 字段 <span class="keyword">WHEN</span> 预期值 <span class="keyword">THEN</span> 结果<span class="number">1</span> <span class="keyword">ELSE</span> 结果<span class="number">2</span> <span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 方式二</span></span><br><span class="line"><span class="comment">-- 如果 age &lt; 20 返回&#x27;20岁以下&#x27;，如果 age &lt; 25 返回&#x27;20-24岁&#x27;，如果 age &gt;= 25 返回&#x27;25岁及以上&#x27; ...</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    device_id,</span><br><span class="line">    gender,</span><br><span class="line">    <span class="keyword">case</span></span><br><span class="line">        <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">20</span> <span class="keyword">then</span> <span class="string">&#x27;20岁以下&#x27;</span></span><br><span class="line">        <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">&#x27;20-24岁&#x27;</span></span><br><span class="line">        <span class="keyword">when</span> age <span class="operator">&gt;=</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">&#x27;25岁及以上&#x27;</span></span><br><span class="line">        <span class="keyword">else</span> <span class="string">&#x27;其他&#x27;</span></span><br><span class="line">    <span class="keyword">end</span> age_cut</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">    user_profile</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="MySQL-定义变量"><a href="#MySQL-定义变量" class="headerlink" title="MySQL 定义变量"></a>MySQL 定义变量</h1><ul>
+<li>@ 变量名 := 赋值或字段名</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> create_at, <span class="variable">@overdueDate</span>:<span class="operator">=</span> create_at <span class="keyword">as</span> overdueDate</span><br><span class="line"><span class="keyword">from</span> waterelectricity_bill;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> create_at, <span class="variable">@overdueDate</span>:<span class="operator">=</span> <span class="string">&#x27;2023-01-05 13:45&quot;22&#x27;</span> <span class="keyword">as</span> overdueDate</span><br><span class="line"><span class="keyword">from</span> waterelectricity_bill;</span><br></pre></td></tr></table></figure>
+
+<h1 id="MySQL-dump"><a href="#MySQL-dump" class="headerlink" title="MySQL dump"></a>MySQL dump</h1><ul>
+<li>备份指定数据指定表 <code>mysqldump -uroot -pTrainP0ss! --databases apartment --tables payment_trade payment_order bill_payment &gt; /tmp/20240726.sql</code></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2024/10/24/MySQL/mysql-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="" target="_blank" rel="external">http://example.com/2024/10/24/MySQL/mysql-基础语法/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2024/10/24/MySQL/mysql-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="(no title)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/klay11K/klay11K.github.io" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
